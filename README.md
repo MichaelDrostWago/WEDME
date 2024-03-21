@@ -1,8 +1,11 @@
 # WEDME  Wage EDM Modbus Extension
 
-You can use this to extend the modbus TCP connections from your Wago EDM Application to multiple modbus TCP servers.
+You can use this to extend the modbus TCP connections from your Wago [EDM Application](https://downloadcenter.wago.com/wago/solution/details/lth2ln74o1199t2olci) to multiple modbus TCP servers.
 
 ## 1. Function
+This Python script, collects data from multiple remote Modbus servers and queue them up in a single register sequence.
+The order of declared remote modbus registers is also the order in queued modbus register sequence.
+
 
 ## 2. Configuration
 Edit the >config.json file to configure the WEDME.
@@ -18,11 +21,11 @@ Edit the >config.json file to configure the WEDME.
 |  Key            | Desrciption                                                               |
 | ----------------| --------------------------------------------------------------------------|
 | myPort          | Modbus port for the internal server                                       |
-| myStartRegister | The first register where all remote modbus server data will be queued up  |
-| interval        | Interval in seconds to poll data from remote modbus servers               |
+| myStartRegister | The first register where all remote Modbus server data will be queued up  |
+| interval        | Interval in seconds to poll data from remote Modbus servers               |
 
 ### 2.2 Modbus Device Configuration
-The communication to all remote modbus devices is configured in the `modbusDevices`-Array. To add a new connection you simply add following lines and edit your parameters:
+The communication to all remote Modbus devices is configured in the `modbusDevices`-Array. To add a new connection you simply add following lines and edit your parameters:
   ```ruby
     {
       "name": "ModbusMeter",
@@ -40,11 +43,11 @@ The communication to all remote modbus devices is configured in the `modbusDevic
 |  Key            | Desrciption                                                               |
 | ----------------| --------------------------------------------------------------------------|
 | name            | User specific devicename (used for Debug)                                 |
-| serverIP        | The IP adress of your remote modbus server                                |
-| serverPort      | The port of your remote modbus server                                     |
-| mbRegisters     | Array of modbus register calls                                            |
+| serverIP        | The IP adress of your remote Modbus server                                |
+| serverPort      | The port of your remote Modbus server                                     |
+| mbRegisters     | Array of Modbus register calls                                            |
 
--> you can also add and remove modbus register calls, every call uses this structure. Multiple calls per device are possible.
+-> you can also add and remove Modbus register calls, every call uses this structure. Multiple calls per device are possible.
   ```ruby
         {"name": "example", "functionCode": <3-4>, "register":    1234, "length": 1}
   ```
