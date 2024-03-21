@@ -56,3 +56,6 @@ The communication to all remote Modbus devices is configured in the `modbusDevic
 
 ### 2.3 example Configuration
 The [config.json](https://github.com/MichaelDrostWago/WEDME/blob/main/config.json) file contents an example configuration.
+## 3. Run in Docker Container on EDM-PLC
+### 3.1 copy packed container image to your Wago plc, you can use WinScp oder other sftp services.
+
