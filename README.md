@@ -5,6 +5,8 @@ You can use this to extend the modbus TCP connections from your Wago [EDM Applic
 ## 1. Function
 This Python script, collects data from multiple remote Modbus servers and queue them up in a single register sequence.
 The order of declared remote modbus registers is also the order in queued modbus register sequence.
+![image](https://github.com/MichaelDrostWago/WEDME/assets/113338718/832fb9fe-8549-4e30-8d45-d8f057ba63a6)
+
 
 
 ## 2. Configuration
