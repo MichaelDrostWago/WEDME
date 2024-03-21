@@ -57,5 +57,18 @@ The communication to all remote Modbus devices is configured in the `modbusDevic
 ### 2.3 example Configuration
 The [config.json](https://github.com/MichaelDrostWago/WEDME/blob/main/config.json) file contents an example configuration.
 ## 3. Run in Docker Container on EDM-PLC
-### 3.1 copy packed container image to your Wago plc, you can use WinScp oder other sftp services.
+### 3.1 copy packed container image to your Wago plc
+you can use WinScp oder other sftp services. Then you copy then wedme.tar and config.json file in the folder. For example the folder /home/wedme/
+![image](https://github.com/MichaelDrostWago/WEDME/assets/113338718/efee2ae1-91a7-4c1e-8f2b-15931bc1bc45)
+### 3.2 unpack an load docker image
+  ```
+  docker load --input /home/wedme/wedme.tar
+  ```
+then there musst be this text:
+Loaded image: wedme:1.0.0
+### 3.3 start the docker container with your config:
+  ```
+docker run -dit -p5502:5502 -v /home/wedme/config.json:/app/config.json --restart=always --name=wedme wedme:1.0.0  app.py
+  ```
+
 
