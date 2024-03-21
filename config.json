@@ -1,0 +1,28 @@
+{
+  "internalConfig": {
+    "myPort": 5502,
+    "myStartRegister": 0,
+    "interval": 2
+  },
+  "modbusDevices": [
+    {
+      "name": "Pro2",
+      "serverIP": "192.168.2.134",
+      "serverPort": 502,
+      "mbRegisters": [
+        {"name": "voltage" , "functionCode": 3, "register": 1280, "length": 1},
+        {"name": "current", "functionCode": 4, "register":    1, "length": 1},
+        {"name": "power", "functionCode": 4, "register":    6, "length": 2},
+        {"name": "energy", "functionCode": 4, "register":    12, "length": 2}
+      ]
+    },
+    {
+      "name": "cc100test",
+      "serverIP": "192.168.2.118",
+      "serverPort": 2000,
+      "mbRegisters": [
+        {"name": "counter", "functionCode": 4, "register": 100, "length": 3}
+      ]
+    }
+  ]
+}
