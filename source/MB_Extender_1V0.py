@@ -1,3 +1,8 @@
+# WEDME Wago EDM Modbus Extender
+# Author:        Michael Drost
+# Version:       1.0
+# PythonVersion: 3.7.3
+
 # --------------------------------------------------------------------------- #
 # import the modbus libraries we need
 # --------------------------------------------------------------------------- #
