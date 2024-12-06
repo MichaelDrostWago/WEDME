@@ -78,11 +78,16 @@ def run_client_update_writer(a):
         
         for mbRead in devices["mbRegisters"]:
             if mbRead["functionCode"] == 3:  
+		
                 print("Read holding registers")      
-                response = client.read_holding_registers(mbRead["register"], 
+                try:
+			        response = client.read_holding_registers(mbRead["register"], 
                                                    mbRead["length"], 
                                                    unit=UNIT)
-                print(response.registers)
+                	print(response.registers)
+		        except:
+			        print("error while response");
+			        continue
             elif mbRead["functionCode"] == 4:
                 print("Read input registers")
                 response = client.read_input_registers(mbRead["register"], 
